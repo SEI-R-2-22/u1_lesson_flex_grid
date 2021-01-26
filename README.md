@@ -1,7 +1,7 @@
 ---
 <img src="https://i.imgur.com/qsSi07H.png">
 
-# Intro to<br>Flexbox & CSS Grid
+# Intro to Flexbox & CSS Grid
 ---
 
 ## Learning Objectives
