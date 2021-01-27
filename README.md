@@ -70,15 +70,17 @@
 
 - The capabilities of Flexbox & CSS Grid complement each other and using both side-by-side and even nesting one within the other.
 
-- To best understand Flexbox & CSS Grid, it's important to remember what CSS stands for - **Cascading Style Sheets**. Understanding how the different sections of your web page relate to each other is critical to understadning how the CSS you write will affect it.
+- To best understand Flexbox & CSS Grid, it's important to remember what CSS stands for - **Cascading Style Sheets**. Understanding how the different sections of your web page relate to each other is critical to understanding how the CSS you write will affect it.
 
-- CSS operates on a parent/child structure with the outermost sections of a page affecting the innermost (Russian Dolls).
+- CSS operates on a parent/child structure with the outermost sections of a page affecting the innermost (Like Russian Dolls).
+
+![Dolls](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Ff704a0c2b662a51397d6a6a8058d88a3%2Ftenor.gif%3Fitemid%3D7433508&f=1&nofb=1)
 
 ---
 
 ### Intro to Flexbox & CSS Grid
 
-- The difference between Flexbox and CSS Grid is how they are designed to lay out their children:
+- The difference between Flexbox and CSS Grid is how they are designed to lay out their *children*:
 
 <img src="https://i.imgur.com/2ie45ct.png">
 
@@ -106,7 +108,7 @@
 
 <br>
 
-- We use a CSS `display: flex;` declaration to make an element a **flex container**, for example:
+- We use the CSS `display: flex;` declaration to make an element a **flex container**, for example:
 
   ```css
   section {
@@ -143,9 +145,9 @@
 
 <br>
 
-- Run the Live Server in VS Code to check it out - definitely not what we're looking for!
+- Open it up in your browser to check it out - definitely not what we're looking for!
 
-- **Which element do we need to make the flex container?**
+- **Which element needs to be our flex container?**
 
 ---
 
@@ -161,7 +163,7 @@
   }
   ```
 
-- Run again, and we can make the following observations:
+- Refresh, and we can make the following observations:
   - The **flex items** are laid out horizontally in a **row** - this is the default layout of a **flex container**.
   - The `<div>` elements have become **flex items** and no longer behave as block elements - their width has collapsed to that of their content and they are willing to sit side-by-side other elements.
 
@@ -171,7 +173,7 @@
 
 <br>
 
-- This just in... our client has informed us that:
+- You do:
 
   - The navigation bar must:
     - Be `50px` in height
@@ -181,7 +183,7 @@
     - A margin of `10px` on all 4 sides
     - A text color of `#FFFFFF`
 
-- Add the CSS to make the client happy!
+- Add the CSS to meet the standard!
 
 ---
 
@@ -469,7 +471,7 @@
 
 <br>
 
-- Running the Live Server shows that we've made a mess. But notice how each **grid item** is simply being placed in each cell across the columns from left to right. This is the default behavior.
+- Refreshing the page shows that we've made a mess. But notice how each **grid item** is simply being placed in each cell across the columns from left to right. This is the default behavior.
 
 - However, we need both the `<nav>` and the `<footer>` to span two columns each...
 
