@@ -279,9 +279,9 @@
 
 <br>
 
-- **When an element has a CSS property of `display: flex;`, that element becomes a flex \*\***\_\_\***\*.**
+- **When an element has a CSS property of `display: flex;`, that element becomes a flex _______________.**
 
-- **When an element has a CSS property of `display: flex;`, its direct children become flex \*\***\_\_\***\*.**
+- **When an element has a CSS property of `display: flex;`, its direct children become flex _______________.**
 
 - **What value is the default for the `flex-direction` property?**
 
