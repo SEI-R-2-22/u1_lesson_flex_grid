@@ -343,9 +343,9 @@
 
 <br>
 
-- To try out CSS Grid, we'll continue to work in the VS Code to layout this UI:
+- To try out CSS Grid, we'll continue to work in VSCode to layout this UI:
 
-<img src="./images/layout.png">
+![Grid](https://i.imgur.com/gUpQxPC.png)
 
 ---
 
