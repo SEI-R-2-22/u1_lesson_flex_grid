@@ -1,4 +1,3 @@
-
 # Intro to Flexbox & CSS Grid
 
 ![Layout](https://i.imgur.com/qsSi07H.png)
@@ -21,9 +20,9 @@ In this lesson, we'll learn how to use Flexbox and Grid to align elements in our
 
 Start by creating a new **index.html and style.css** file in the lesson's directory using terminal commands. These should be second nature by now.
 
-  - First, in our HTML file, let's add our boilerplate HTML by typing `! + tab`.  If it doesn't work for you, feel free to type out the boilerplate yourself.
+  - First, in our HTML file, let's add our boilerplate HTML by typing <kbd>!</kbd> + <kbd>tab</kbd>.  If it doesn't work for you, feel free to type out the boilerplate yourself.
 
-  - Next, let's be sure and link our HTML file to our CSS file by adding the following line of code above our title:
+  - Next, let's be sure and link our HTML file to our CSS file by adding the following line of code *above* our title in our **head** tag:
 
     ```html
     <link rel="stylesheet" href="style.css" />
@@ -44,15 +43,11 @@ Start by creating a new **index.html and style.css** file in the lesson's direct
 
 ### Intro to Flexbox & CSS Grid
 
-As a front-end developer, you will be required to precisely layout the elements on web pages.
-
-Prior to Flexbox & CSS Grid, laying out the parts of a web page from basic navigation headers to complex full-page layouts has not been as straightforward as it could be - Flexbox & Grid, however, are game changers.
-
-The capabilities of Flexbox & CSS Grid complement each other and using both side-by-side and even nesting one within the other.
+The capabilities of Flexbox & CSS Grid complement each other. You can use both side-by-side, and even nest them within one another.
 
 To best understand Flexbox & CSS Grid, it's important to remember what CSS stands for - **Cascading Style Sheets**. Understanding how the different sections of your web page relate to each other is critical to understanding how the CSS you write will affect it.
 
-CSS operates on a parent/child structure with the outermost sections of a page affecting the innermost (Like Russian Dolls).
+CSS operates on a parent/child structure with the outermost sections of a page affecting the innermost (like Russian Dolls).
 
 ![Dolls](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Ff704a0c2b662a51397d6a6a8058d88a3%2Ftenor.gif%3Fitemid%3D7433508&f=1&nofb=1)
 
@@ -79,9 +74,9 @@ We use the CSS `display: flex;` declaration to make an element a **flex containe
   }
   ```
 
-  The above would make all `<section>` elements **flex containers** and all direct children become **flex items**.
+  The above would make all `<section>` elements **flex containers** and all direct children would become **flex items**.
 
-Let's open a separate tab in our browser and briefly review what has become the [de facto guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Let's open a new tab in our browser and briefly review what has become the [de facto guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 ### Your First Flexbox
 
@@ -98,7 +93,7 @@ Add the following markup for the nav bar inside of the `<body>` tags in our HTML
   </nav>
   ```
 
-Open it up in your browser to check it out - definitely not what we're looking for!
+Open it up in your browser to check it out - that's definitely not what we're looking for!
 
 **Which element needs to be our flex container?**
 
@@ -114,7 +109,7 @@ Refresh, and we can make the following observations:
   - The **flex items** are laid out horizontally in a **row** - this is the default layout of a **flex container**.
   - The `<div>` elements have become **flex items** and no longer behave as block elements - their width has collapsed to that of their content and they are willing to sit side-by-side other elements.
 
-### You Do
+### You Do (5 mins)
 
 The navigation bar must:
   - Be `50px` in height
@@ -160,6 +155,7 @@ With the following alignment properties set:
     display: flex;
     flex-direction: row; /* default */
     justify-content: flex-start; /* default */
+
     height: 50px;
     background-color: #f03f3c;
   }
@@ -173,13 +169,34 @@ Let's say you want the `LOG OUT` menu item to be aligned on the right:
 
 ![Logout](https://i.imgur.com/zk2vqJ5.png)
 
-You could wrap the other three with another element and set `justify-content` to `space-between`.
+You could wrap the other three with another element and set the `justify-content` to `space-between` like this...
 
-Or, we can use this bit of CSS goodness:
+HTML:
+  ```html
+  <nav>
+    <section>
+      <div>HOME</div>
+      <div>ABOUT</div>
+      <div>WIDGETS</div>
+    </section>
+    <div>LOG OUT</div>
+  </nav>
+  ```
 
+CSS:
   ```css
-  nav > div:last-child {
-    margin-left: auto;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 50px;
+    background-color: #F03F3C;
+  }
+
+  /* Don't forget to make the new HTML element a flexbox too! */
+  section {
+    display: flex;
   }
   ```
 
@@ -202,7 +219,7 @@ Or, we can use this bit of CSS goodness:
 
 ![Grid](https://i.imgur.com/tkBPUd0.png)
 
-  2.  Any other "components" that would benefit from a grid-type layout such as a "profile card", in other words, CSS Grid doesn't have to apply to the whole page - it can be useful for laying out smaller "components" as well.
+  2.  Any other "components" that would benefit from a grid-type layout such as a "profile card". In other words, CSS Grid doesn't have to apply to the whole page - it can be useful for laying out smaller "components" as well.
 
 ### CSS Grid Fundamentals
 
@@ -250,15 +267,17 @@ Let's add the additional HTML required by the UI:
   ```html
   <body>
     <nav>
-      <div>HOME</div>
-      <div>ABOUT</div>
-      <div>WIDGETS</div>
+      <section>
+        <div>HOME</div>
+        <div>ABOUT</div>
+        <div>WIDGETS</div>
+      </section>
       <div>LOG OUT</div>
     </nav>
     <aside>SIDE BAR</aside>
     <main>MAIN CONTENT</main>
     <footer>FOOTER</footer>
-  </body>
+</body>
   ```
 
 Now for a touch of styling...
@@ -335,7 +354,7 @@ For example:
 
 The lines are numbered starting with 1 (not zero).
 
-We will use `span x` to specify how many columns we want to span:
+We will use `span x` to specify how many columns we want to span. Add this to your CSS:
 
   ```css
   nav,
@@ -361,7 +380,7 @@ Update the CSS of the `<body>` (grid container) to the following:
     ...
   ```
 
-Note that the grid gaps cannot be styled - the grid's background simply shows through.
+Note that the grid gaps cannot be styled - it is literally ***anti-style***.
 
 ## Lesson Recap
 We learned all about how to use Flexbox and CSS Grid when trying to lay out our web pages.  These are extremely useful tools for any Front End Developer and allow us to really achieve dynamic and engaging layouts!
