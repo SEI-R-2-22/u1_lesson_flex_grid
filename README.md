@@ -37,7 +37,6 @@ Start by creating a new **index.html and style.css** file in the lesson's direct
 
     body {
       margin: 0;
-      font-family: Helvetica;
     }
     ```
 
